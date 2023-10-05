@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAMES</title>
+  <link rel="stylesheet" href="demo.css">
+
+</head>
+<body>
+    
+    <h2 style="color:blue;"> Bio Data </h2>
+
+    <div class="namebox">
+    
+    <label for="fname"> FIRST NAME</label><br>
+    <input type="text" name="firstname" id='firstname'>
+    <br>
+    <label for="lname"> LAST NAME</label><br>
+    <input type="text" name="lastname" id='lastname'>
+    <br>
+    <input type="button" value=" Submit" onclick="myFunction()">
+    <div id="here"> </div>    
+    
+
+
+    <script>
+    myFunction = function() {
+        var first = document.getElementById("firstname").value;
+        var second = document.getElementById("lastname").value;
+        
+        document.getElementById("here").innerHTML = first+" "+second;
+    }
+    
+</script>
+</div>
+
+<h4>Age Validation</h4>
+
+<div class="box2" style="margin-top: 5px;">
+    
+    <label for="age">Age</label>
+    
+    <input type="number" id="ageInput" placeholder="Type Your Age">
+    
+    <button type="button" onclick="checkEligibility()">Check</button>
+    
+    <p id="check">Check Here for Eligibility</p>
+    
+    <script>
+        
+        function checkEligibility() 
+        {
+           
+            var age = document.getElementById("ageInput").valueAsNumber;
+            
+                if (age >= 18) 
+                {
+                    document.getElementById("check").innerHTML = "Eligible to vote";
+                } 
+                else 
+                {
+                    var diff = 18 - age;
+                    document.getElementById("check").innerHTML = "Not eligible sorry, You can vote after " + diff + " years.";
+                }
+            
+        }
+    </script>
+</div>
+
+<div class="box3">
+
+    <h4>Check Greater</h4>
+    
+    <label for="num1">A</label>
+    
+    <input type="number" name="num1" id="num1">
+    
+    <label for="num2">B</label>
+    
+    <input type="number" name="num2" id="num2">
+    
+    <button type= "button" onclick="checkgreater()" > Check </button>
+    
+    <p id="result"> Result </p>
+     
+     <script>
+        function  checkgreater()
+        {
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            
+            if (num1 > num2) 
+            {
+                document.getElementById("result").innerHTML= "A is greater.";
+            }
+            else if (num2 > num1)
+            {
+                document.getElementById("result").innerHTML= "B is greater.";
+            }
+            else 
+            {
+                (num1 = num2)
+                document.getElementById("result").innerHTML= "Both numbers are equal.";
+            }
+        }
+
+     </script>
+
+</div>
+
+
+    <div class="box4">
+
+        <h4> Maths </h4>
+       
+        <label for="num3">Number1</label> <input type="number" name="num3" id="num3"> <br> <br>
+       
+        <label for="num4">Number2</label> <input type="number" name="num4" id="num4"> <br> <br>
+        
+        <button type="button" onclick="addition()">Addition</button>
+        
+        <button type="button" onclick="subtraction()">Subtraction</button>
+        
+        <button type="button" onclick="multiplication()">Multiplication</button>
+       
+        <button type="button" onclick="division()">Division</button>
+        
+        <p id="answer"> Answer </p>
+
+    </div>
+
+    <script>
+       
+       function addition() 
+       {
+            var num3 = parseInt(document.getElementById("num3").value);
+            var num4 = parseInt(document.getElementById("num4").value);
+            var res;
+            res = num3 + num4;
+            document.getElementById ("answer").innerHTML=(res);
+            
+        }
+        function subtraction() 
+       {
+            var num3 = parseInt(document.getElementById("num3").value);
+            var num4 = parseInt(document.getElementById("num4").value);
+            var res;
+            res = num3 - num4;
+            document.getElementById ("answer").innerHTML=(res);
+            
+        }
+        function multiplication() 
+       {
+            var num3 = parseInt(document.getElementById("num3").value);
+            var num4 = parseInt(document.getElementById("num4").value);
+            var res;
+            res = num3 * num4;
+            document.getElementById ("answer").innerHTML=(res);
+            
+        }
+        function division() 
+       {
+            var num3 = parseInt(document.getElementById("num3").value);
+            var num4 = parseInt(document.getElementById("num4").value);
+            var res;
+            res = num3 / num4;
+            document.getElementById ("answer").innerHTML=(res);
+            
+        }
+
+    </script>
+
+    <div class="box5">
+
+        <h4> Odd & Even </h4>
+
+        Number <input type="number" id="num5">
+                <button type="button" onclick="odd_even()">Check</button>
+                <p id="oddeven"> Odd or Even</p>
+        
+        <script>
+
+            function odd_even()
+            {
+            var x = parseInt(document.getElementById("num5").value);
+            
+            if(x % 2 == 0)
+            {
+                // document.getElementById(x + " is even").value;
+                document.getElementById("oddeven").innerHTML= "This is Even Number";
+            }
+
+            else 
+            {
+                // document.getElementById(x + " is odd").value;
+                document.getElementById("oddeven").innerHTML= "This is Odd Number";
+            }
+        }
+        </script>
+    </div>
+
+    <div class="box6" style="margin-top: 10px;">
+        
+        <h4> Marks Average</h4>
+
+        <label for="num7">Maths</label>
+        <input type="number" name="num7" id="num7"> <br> <br>
+        <label for="num8">Science</label>
+        <input type="number" name="num8" id="num8"> <br> <br>
+        <label for="num9">Social Science</label>
+        <input type="number" name="num9" id="num9"> <br> <br>
+        
+        <p id="total"> Here is Your Total </p>
+        <p id="average"> Here is Your Average</p>
+        <p id="grade"> Here is Your Grade</p>
+
+        <button type="button" onclick="total_average()">Total and Average</button>
+
+        <script>
+
+            function total_average()
+            {
+
+            var x = parseInt(document.getElementById("num7").value);
+            var y = parseInt(document.getElementById("num8").value);
+            var z = parseInt(document.getElementById("num9").value);
+            var total, average;
+            
+            total = x+y+z;
+            average = (x+y+z)/3;
+            
+            document.getElementById("total").innerHTML=(total);
+            document.getElementById("average").innerHTML=(average);
+            document.getElementById("grade").innerHTML=(average);
+            
+            if (average>=90)
+            {
+                document.getElementById("grade").innerHTML="Grade A";
+            }
+            else if (average>=70)
+            {
+                document.getElementById("grade").innerHTML="Grade B";
+            }
+            else if (average>=60)
+            {
+                document.getElementById("grade").innerHTML="Grade C";
+            }
+
+        }
+        </script>
+    </div>
+
+    <div class="box7">
+        <h2> LOOPS CONCEPT</h2>
+        
+       <h4>Odd</h4>
+    
+        <script>
+
+            for (i=1;i<=10;i+=2)
+            {
+                document.write(i,"</br>");
+            }
+            
+        </script>
+
+        <h4>Even</h4>
+
+        <script >
+            for(i=2;i<=10;i+=2)
+            {
+                document.write(i,"</br>");
+            }
+        </script>
+
+        <h4> 4 multiplication </h4>
+
+        <script>
+             for(i=4;i<=40;i+=4)
+            {
+                document.write(i,"</br>");
+            }
+
+        </script>
+
+        <h4> 4 Tables </h4>
+
+        <script>
+            for(i=1;i<=10;i++)
+           {
+               document.write("4*",i,"=",i*4,"</br>");
+           }
+
+       </script>
+
+       <h4> Type any Number you will get multiple of that number</h4>
+
+       <label for="urnum">Enter Table number</label>
+       <input type="number" name="urnum" id="urnum">
+       <button type="button" onclick="checktable()"> Click </button>
+       <p id="get">Here is Your Table</p>
+
+       <script>
+
+        function checktable()
+        {
+           var f = parseInt(document.getElementById("urnum").value);
+           var tableText = "";
+
+            for(i=1;i<=10;i++)
+            {
+                tableText += f + " * " + i + " = " + (i * f) + "<br>";
+            }
+
+            document.getElementById("get").innerHTML= tableText;
+           
+            
+        
+        }
+       </script>
+   
+
+   <h2>Start table end table</h2>
+
+        <label for="starnum">Start No:</label> 
+        <input type="number" name="startnum" id="startnum"> <br> <br>
+        
+        <label for="endnum">End   no: </label>
+        <input type="number" name="endnum" id="endnum"> <br> <br>
+        
+        <button type="button" onclick="showtab()"> Show  Table </button>
+
+        <div id="tableContainer"></div>
+
+       <script>
+        function showtab(){
+         var a = parseInt(document.getElementById("startnum").value);
+         var b = parseInt(document.getElementById("endnum").value);
+        
+         var tableText = "";
+         
+         for(i=1;i<=b;i++){
+            tableText += a + " * " + i + " = " + (i * a) + "<br>";
+            }   
+            var tableContainer = document.getElementById("tableContainer");
+            tableContainer.innerHTML = tableText;
+        }
+       </script>
+
+       <h4> Find Odd or Even </h4>
+
+       <label for="enter">Number:</label>
+       <input type="number" name="enter" id="enter">
+       <button type="button" onclick="findoddeven()"> Click </button>
+       
+
+       <script>
+        function findoddeven(){
+        
+        var c = parseInt(document.getElementById("enter").value);
+         
+        for (i=1;i<=c;i++)
+        
+        if(i%2==0)
+        {
+        document.write(i,"even","</br>");
+        }
+        else
+        {
+            document.write(i,"odd","</br>");
+        }
+    }
+
+       </script>
+</div>
+
+<h4>Loop Star</h4>
+     
+    <label for="star">Start star</label>
+    <input type="number" name="star" id="star">
+    <button type="button" onclick="starjoin()">Star</button>
+    <script>
+        function starjoin()
+        { 
+        var d = parseInt(document.getElementById("star").value);
+          for(i=1;i<=d;i++)
+            {
+            for(j=1;j<=i;j++){
+              document.write("*");
+            }
+            document.write("<br>");
+        }
+    }
+
+    </script>
+
+    <div class="box8">
+
+        <h4>Find Odd E-ven</h4>
+
+    <label for="showoddeven">Enter Number</label>
+    <input type="number" name="showoddeven" id="showoddeven">
+    <button type="button" onclick="find()"> Show </button>
+
+    <script>
+        function find()
+        {
+            var e = parseInt(document.getElementById("showoddeven").value);
+            
+            for(i=1;i<=e;i++)
+           
+            if(i%2==0)
+            {
+                document.write("even")
+            }
+            else
+            {
+                document.write("odd")
+            }
+
+        }
+
+
+    </script>
+</div>
+
+<div class="box9">
+
+<h4> Reverse Numbers </h4>
+
+<label for="rev"> Reverse </label>
+<input type="number" name="rev" id="rev">
+
+<button type="button" onclick="reverse()">Click</button>
+
+<script>
+    function reverse()
+    {
+        var f = parseInt(document.getElementById("rev").value);
+        
+        for(i=f;i>=1;i--){
+        for(j=i;j>=1;j--){  
+           document.write(j)
+        }
+            document.write("<br>")}
+    }
+</script>
+</div>
+<div class="box10">
+
+    <h4>Ascending order Descending order</h4>
+
+    <label for="asdc">Number</label>
+    <input type="number" name="asdc" id="asdc">
+    <button type="button" onclick="ad()">Click</button>
+    <script>
+        function  ad()
+        {
+            var g = parseInt(document.getElementById("asdc").value);
+
+            document.write("Ascending","<br>")
+
+            for(i=1;i<=g;i++)
+            {
+                document.write(i,"<br>")
+            }
+
+            document.write("Descending ","<br>")
+
+            for(i=g;i>=1;i--)
+            {
+                document.write(i,"<br>")
+            }
+
+        }
+
+    </script>
+</div>
+
+<div class="bo11">
+
+<h4>Descending order</h4>
+
+    <label for="asdc">Number</label>
+    <input type="number" name="asdc" id="dc">
+    <button type="button" onclick="des()">Click</button>
+    <script>
+        function  des()
+        {
+            var h = parseInt(document.getElementById("dc").value);
+
+            document.write("Descending","<br>")
+
+            for(i=h;i>=1;i--)
+            {
+                document.write(i,"<br>")
+            }
+        }
+    </script>
+</div>
+
+
+
+
+
+       
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+.namebox
+{
+    width: 600px;
+    height: 170px;
+    background-color: lightblue;
+    padding: 20px 10px;
+
+}
+
+input[type=text] {
+    
+    width: 98%;
+    padding: 8px 20px;
+    margin: 10px 0;
+    display: inline-block;
+    box-sizing: border-box;
+   
+  }
+
+
